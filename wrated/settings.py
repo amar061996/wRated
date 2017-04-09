@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -125,6 +126,7 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 
 STATIC_ROOT=os.path.join(os.path.dirname(BASE_DIR), "static_root")
 MEDIA_ROOT=os.path.join(os.path.dirname(BASE_DIR), "media_root")
