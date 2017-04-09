@@ -1,0 +1,30 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
+    <link href="{% static 'css/star-rating.css' %}" media="all" rel="stylesheet" type="text/css" />
+ 
+
+ 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
+    <script src="{% static 'js/star-rating.js' %}" type="text/javascript"></script>
+</head>
+<body>
+
+
+<form  method="post" action="{% url 'ratings:home' %}" name="rForm">{% csrf_token %}
+<p>Hii</p>
+   <input id="input-id" type="text" class="rating" data-size="xs" name="new" >
+     <input type="submit" class="btn btn-primary" value="submit">      
+</form>
+
+</body>
+</html>
+
+
+

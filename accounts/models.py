@@ -17,7 +17,13 @@ class Category(models.Model):
 
 	def __str__(self):
 		return self.cname
+
+GENDER_CHOICES=(
 	
+	('Male','Male'),
+	('Female','Female'),
+	('Others','Others')
+)
 
 class Workplace(User):
 	address=models.TextField(max_length=250)
@@ -27,5 +33,6 @@ class Workplace(User):
 
 
 class Employee(User):
+	gender=models.CharField(max_length=250,choices=GENDER_CHOICES,blank=False,default='Male')
 	employee_id=models.CharField(max_length=250)
 	eworkplace=models.ForeignKey(Workplace,on_delete=models.CASCADE,verbose_name='Workplace',blank=False)

@@ -24,7 +24,8 @@ from accounts import views as account_views
 urlpatterns = [
 	url(r'^$',account_views.home),
     url(r'^admin/', admin.site.urls),
-    url(r'^accounts/',include("accounts.urls",namespace="accounts"))
+    url(r'^accounts/',include("accounts.urls",namespace="accounts")),
+    url(r'^rating/',include("ratings.urls",namespace="ratings")),
 ]
 
 
