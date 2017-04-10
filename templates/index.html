@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+    <!-- masthead -->
+    <div class="jumbotron">
+      <h2 class="jumbotron--title">WRated</h2>
+      <p class="jumbotron--sub-title">Rate your Workplace</p>
+      <span style="color: black" class="icon-star"></span><span style="color: black" class="icon-star"></span><span style="color: black" class="icon-star"></span>
+    </div><!-- /masthead -->
+
+      <!-- intro -->
+      <section class="intro">
+        <div class="container">
+          <h3>
+            Help your Workplace be a Super Workplace
+            </h3>
+            <a href="#" class="btn  btn--dark">Get Started</a>
+        </div>
+      </section><!-- /intro -->  
+
+      <!-- portfolio lr -->
+      <div class="portfolio--lr">
+        <div class="container">
+
+          <div class="row">
+            <!-- left -->
+            <div class="col-12  col-md-7  col-lg-6">
+              <img src="{% static 'img/portfolio.png' %}" class="img-responsive" alt="portfolio image"/>
+            </div>
+              <!-- right -->
+              <div class="col-12  col-md-offset-1  col-md-4  col-lg-offset-1  col-lg-5">
+                <h4 class="portfolio--title">Title</h4>
+                <p class="portfolio--sub-title">Sub title</p>
+                <p class="portfolio--paragraph">
+                  Something about the project goes here.  Maybe a little bit more if you've got a lot to say.
+                </p>
+                <a href="project.html" class="btn  btn--green">take a look</a>
+              </div>
+          </div>
+
+        </div>
+      </div><!-- /portfolio lr -->
+
+      <!-- portfolio feature -->
+      <div class="portfolio--feature">
+        <div class="container">
+
+          <div class="row">
+
+            <!-- feature for xsmall sizes only -->
+            <img src="{% static 'img/portfolio-feature.jpg '%}" class="img-responsive  portfolio--feature__main  visible-small-only" alt="portfolio feature image" />
+            <!-- /feature for xsmall sizes only -->
+
+            <div class="container  hidden-xs">
+              <div class="row">
+
+                <!-- slider main images -->
+                <ul class="homepageslider">
+                  <li>                    
+                    <img src="{% static 'img/portfolio-feature.jpg' %}" class="img-responsive  portfolio--feature__main" alt="portfolio slider option" />
+                  </li>
+                  <li>                    
+                    <img src="{% static 'img/portfolio-feature-2.jpg' %}" class="img-responsive  portfolio--feature__main" alt="portfolio slider option" />
+                  </li>
+                  <li>                    
+                    <img src="{% static 'img/portfolio-feature-3.jpg' %}" class="img-responsive  portfolio--feature__main" alt="portfolio slider option" />
+                  </li>
+                  <li>                    
+                    <img src="{% static 'img/portfolio-feature-4.jpg' %}" class="img-responsive  portfolio--feature__main" alt="portfolio slider option" />
+                  </li>            
+                </ul><!-- /slider main images -->
+
+              </div>
+            </div>
+
+              <!-- slider thumbnails -->
+              <ul id="bx-pager" class="list-unstyled  hidden-xs">
+                <li class="col-sm-3  col-md-3  col-lg-3">
+                  <a data-slide-index="0" href="#">
+                    <img src="{% static 'img/portfolio-feature.jpg' %}" class="img-responsive" alt="portfolio thumbnail option" />
+                  </a>
+                </li>
+                <li class="col-sm-3  col-md-3  col-lg-3">
+                  <a data-slide-index="1" href="#">
+                    <img src="{% static 'img/portfolio-feature-2.jpg' %}" class="img-responsive" alt="portfolio thumbnail option" />
+                  </a>
+                </li>
+                <li class="col-sm-3  col-md-3  col-lg-3">
+                  <a data-slide-index="2" href="#">
+                    <img src="{% static 'img/portfolio-feature-3.jpg' %}" class="img-responsive" alt="portfolio thumbnail option" />
+                  </a>
+                </li> 
+                <li class="col-sm-3  col-md-3  col-lg-3">
+                  <a data-slide-index="3" href="#">
+                    <img src="{% static 'img/portfolio-feature-4.jpg' %}" class="img-responsive" alt="portfolio thumbnail option" />
+                  </a>
+                </li>
+              </ul><!-- /slider thumbnails -->
+
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <h4 class="portfolio--feature__title">A descriptive title for you</h4>
+              <p>Sub title</p>
+              <p class="portfolio--feature__paragraph">
+                Some descriptive text maybe, well look no further.  You can turn this optional component on or off depending whether you'd like to talk a little bit about the carousel above.
+              </p>
+              <a href="project.html" class="btn  btn--green">oh, and a link</a>
+            </div>
+          </div>
+
+        </div>
+      </div><!-- /portfolio feature -->
+
+        <!-- portfolio list -->
+        <div class="container">
+        <br>
+          <div class="row">
+
+          <h4 style="text-align: center;">Super Workplaces</h4>
+            <ul class="list-unstyled  portfolio--list  cs-style-3">
+            
+              <!-- work item 1 -->
+				 <div class="w3-quarter">
+					<div class="w3-card-4 test" style="width:92%;max-width:300px;">
+						<img src="{% static 'img/img_avatar3.png' %}" alt="Avatar" style="width:100%;opacity:0.85">
+						<div class="w3-container" style="background-color: rgba(100, 100, 100, 0.2);" >
+						<h4><b>John</b></h4>    
+						<p>Architect and engineer</p>    
+						</div>
+					</div>
+					<br>
+				</div>
+					 <div class="w3-quarter">
+					<div class="w3-card-4 test" style="width:92%;max-width:300px;">
+						<img src="{% static 'img/img_avatar3.png' %}" alt="Avatar" style="width:100%;opacity:0.85">
+						<div class="w3-container" style="background-color: rgba(100, 100, 100, 0.2);" >
+						<h4><b>John</b></h4>    
+						<p>Architect and engineer</p>    
+						</div>
+					</div>
+					<br>
+				</div>
+					 <div class="w3-quarter">
+					<div class="w3-card-4 test" style="width:92%;max-width:300px;">
+						<img src="{% static 'img/img_avatar3.png' %}" alt="Avatar" style="width:100%;opacity:0.85">
+						<div class="w3-container" style="background-color: rgba(100, 100, 100, 0.2);" >
+						<h4><b>John</b></h4>    
+						<p>Architect and engineer</p>    
+						</div>
+					</div>
+					<br>
+				</div>
+					 <div class="w3-quarter">
+					<div class="w3-card-4 test" style="width:92%;max-width:300px;">
+						<img src="{% static 'img/admin.png' %}" alt="Avatar" style="width:268px;height:268px;opacity:0.85">
+						<div class="w3-container" style="background-color: rgba(100, 100, 100, 0.2);" >
+						<h4><b>John</b></h4>    
+						<p>Architect and engineer</p>    
+						</div>
+					</div>
+					<br>
+				</div>
+
+            </ul>
+
+          </div>
+          <a href="#" class="btn btn--green" style="margin-left: 40%">See more</a>
+
+        </div><!-- /portfolio list -->
+
+        <!-- twitter -->
+        <section class="tweet">
+          <div class="container">
+            <span class="icon-twitter"></span>
+            <h3 class="tweet--tweet">Why not drop us a line on Twitter?</h3>
+            <p class="tweet--secondary">We'd love to hear from you!</p>
+            <a href="http://www.twitter.com/nerdswithhair" target="_blank" class="btn  btn--green">@nerdswithhair</a>
+          </div>
+        </section><!-- /twitter -->
+
+{% endblock %}

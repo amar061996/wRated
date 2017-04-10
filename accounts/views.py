@@ -18,7 +18,7 @@ def home(request):
 	context={
 	"form":form
 	}
-	return render(request,"accounts/wform.html",context)
+	return render(request,"index.html",context)
 
 def register_employee(request):
 
