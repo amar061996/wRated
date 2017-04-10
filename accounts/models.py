@@ -28,7 +28,7 @@ GENDER_CHOICES=(
 class Workplace(User):
 	address=models.TextField(max_length=250)
 	logo=models.ImageField(upload_to=upload_location,null=True,blank=True)
-	wcategory=models.ForeignKey(Category,on_delete=models.CASCADE)
+	wcategory=models.ForeignKey(Category,on_delete=models.CASCADE,verbose_name='Category')
 
 
 

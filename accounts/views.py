@@ -15,8 +15,10 @@ from .forms import WorkplaceForm,EmployeeForm
 
 def home(request):
 	form=EmployeeForm()
+	wform=WorkplaceForm()
 	context={
-	"form":form
+	"form":form,
+	"wform":wform,
 	}
 	return render(request,"index.html",context)
 

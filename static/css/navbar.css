@@ -1,0 +1,41 @@
+.navbar{
+
+background-color:#243546 ;
+margin-bottom: 0;
+
+
+}
+
+.navbar-brand{
+	color: white;
+
+}
+.navbar-brand:hover {
+	color: #DCDCDC;
+
+}
+
+.navbar-nav li.active{
+
+	color: white;
+	background-color:transparent;
+}
+
+.navbar-nav li.active:hover{
+
+	color: white;
+	background-color:transparent;
+}
+
+.modal-content{
+
+color:white;
+background-color: #243546;
+}
+
+.modal-header{
+	border-bottom: none; 
+}
+.nav-tabs-content{
+	margin-bottom: 0;
+}

@@ -15,3 +15,8 @@ class EmployeeForm(forms.ModelForm):
 	class Meta:
 		model=Employee
 		fields=['username','first_name','last_name','gender','email','password','employee_id','eworkplace']		
+
+		def __init__(self, *args, **kwargs):
+			super(EmployeeForm, self).__init__(*args, **kwargs)
+			for field in self.fields:
+				field.widget.attrs.update({'class' : 'form-control'})

@@ -1,0 +1,75 @@
+{% load add_class %}
+<!--Registration Form -->
+
+<div id="myModal" class="modal fade" role="dialog">
+<!-- Popup Div Starts Here -->
+ <div class="modal-dialog">
+<!-- Contact Us Form -->
+<div class="modal-content">
+              <ul class="nav nav-tabs">
+                  <li class="active"><a href="#emp" data-toggle="tab">Register as Employee</a></li>
+                  <li><a href="#work" data-toggle="tab">Register Workplace </a></li>
+                  <li><button type="button" class="close" data-dismiss="modal" style="margin-left: 18px;">&times;</button></li>
+              </ul>
+             
+<div class="tab-content">
+<div id="emp" class="tab-pane  active  nav-tabs-content">
+
+ <!-- comment form -->
+  <form method="post" action="#" id="Registration-form" class="form-horizontal" role="form">
+    {% for field in form %}
+    <div class="form-group">
+        <label for="{{ field.id }}" class="col-12  col-lg-4  control-label">{{ field.label }} :</label>
+        <div class="col-12  col-lg-8">
+            {{ field|add_class:"form-control" }}
+        </div>
+    </div>                  
+    {% endfor %}
+
+    <br/>
+    <div class="form-group">
+
+      <div class="col-12 col-lg-offset-3 col-sm-9 ">
+       <button type="submit" class="btn btn--green">Register As Employee</button>
+      </div>
+    </div>
+
+
+
+
+  </form> 
+</div>
+<div id="work" class="tab-pane  nav-tabs-content">
+
+ <!-- comment form -->
+  <form method="post" action="#" id="Registration-form" class="form-horizontal" role="form">
+    {% for field in wform %}
+    <div class="form-group">
+        <label for="{{ field.id }}" class="col-12  col-lg-4  control-label">{{ field.label }} :</label>
+        <div class="col-12  col-lg-8">
+            {% if field.label == 'Logo' %}
+              {{ field }}
+            {% else %}
+              {{ field|add_class:"form-control" }}
+            {% endif %}
+        </div>
+    </div>                  
+    {% endfor %}
+
+    <br/>
+    <div class="form-group">
+
+      <div class="col-12 col-lg-offset-3 col-sm-9 ">
+       <button type="submit" class="btn btn--green">Register As Workplace</button>
+      </div>
+    </div>
+
+
+
+
+  </form> 
+</div>
+</div>
+</div>
+</div>
+</div>

@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load add_class %}
 
 {% block content %}
 
+
+<!--Registration Modal -->
+{% include 'register_form.html' %}
 
     <!-- masthead -->
     <div class="jumbotron">
@@ -28,7 +32,7 @@
           <div class="row">
             <!-- left -->
             <div class="col-12  col-md-7  col-lg-6">
-              <img src="{% static 'img/portfolio.png' %}" class="img-responsive" alt="portfolio image"/>
+              <img src="{% static 'img/portfolio.png' %}" class="img-responsive" alt="portfolio image" style="opacity: 0.5;" />
             </div>
               <!-- right -->
               <div class="col-12  col-md-offset-1  col-md-4  col-lg-offset-1  col-lg-5">
@@ -127,7 +131,7 @@
               <!-- work item 1 -->
 				 <div class="w3-quarter">
 					<div class="w3-card-4 test" style="width:92%;max-width:300px;">
-						<img src="{% static 'img/img_avatar3.png' %}" alt="Avatar" style="width:100%;opacity:0.85">
+						<img src="{% static 'img/img_avatar3.png' %}" alt="Avatar" style="width:100%;">
 						<div class="w3-container" style="background-color: rgba(100, 100, 100, 0.2);" >
 						<h4><b>John</b></h4>    
 						<p>Architect and engineer</p>    
@@ -137,7 +141,7 @@
 				</div>
 					 <div class="w3-quarter">
 					<div class="w3-card-4 test" style="width:92%;max-width:300px;">
-						<img src="{% static 'img/img_avatar3.png' %}" alt="Avatar" style="width:100%;opacity:0.85">
+						<img src="{% static 'img/img_avatar3.png' %}" alt="Avatar" style="width:100%;">
 						<div class="w3-container" style="background-color: rgba(100, 100, 100, 0.2);" >
 						<h4><b>John</b></h4>    
 						<p>Architect and engineer</p>    
@@ -147,7 +151,7 @@
 				</div>
 					 <div class="w3-quarter">
 					<div class="w3-card-4 test" style="width:92%;max-width:300px;">
-						<img src="{% static 'img/img_avatar3.png' %}" alt="Avatar" style="width:100%;opacity:0.85">
+						<img src="{% static 'img/img_avatar3.png' %}" alt="Avatar" style="width:100%;">
 						<div class="w3-container" style="background-color: rgba(100, 100, 100, 0.2);" >
 						<h4><b>John</b></h4>    
 						<p>Architect and engineer</p>    
@@ -157,7 +161,7 @@
 				</div>
 					 <div class="w3-quarter">
 					<div class="w3-card-4 test" style="width:92%;max-width:300px;">
-						<img src="{% static 'img/admin.png' %}" alt="Avatar" style="width:268px;height:268px;opacity:0.85">
+						<img src="{% static 'img/admin.png' %}" alt="Avatar" style="width:268px;height:268px;">
 						<div class="w3-container" style="background-color: rgba(100, 100, 100, 0.2);" >
 						<h4><b>John</b></h4>    
 						<p>Architect and engineer</p>    
@@ -182,5 +186,10 @@
             <a href="http://www.twitter.com/nerdswithhair" target="_blank" class="btn  btn--green">@nerdswithhair</a>
           </div>
         </section><!-- /twitter -->
+
+
+
+<!-- Popup Div Ends Here -->
+<!-- Registration Ends Here-->
 
 {% endblock %}

@@ -26,14 +26,23 @@
     <link href="{% static 'css/styles.css' %}" rel="stylesheet" media="screen">
     <!-- media-queries -->
     <link href="{% static 'css/media-queries.css' %}" rel="stylesheet" media="screen">
-    
+    <!-- Navbar style changes  -->
+   
+    <!-- Popup form styles  -->
+    <link href="{% static 'css/form.css' %}" rel="stylesheet" media="screen">
+     <link href="{% static 'css/navbar.css' %}" rel="stylesheet" media="screen">
     <!-- modernizr -->
     <script src="{% static 'js/modernizr.custom.js' %}"></script>
+    <style type="text/css">
+      
+
+     
+    </style>
   </head>
   <body>
 
   <!-- nav -->
-  <nav class="navbar  navbar-fixed-top" role="navigation">
+  <nav class="navbar" role="navigation" >
     <!-- container -->
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -51,10 +60,7 @@
       <div class="collapse  navbar-collapse  navbar-ex1-collapse">
         <ul class="nav  navbar-nav">
             <li class="active">Home</li>
-            <li><a href="work.html">Work</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="shortcodes.html">Shortcodes</a></li>
-            <li><a href="archives.html">Archives</a></li>
+             <li><a href="#" data-toggle="modal" data-target="#myModal">Register</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
       </div><!-- /navbar-collapse -->
@@ -63,6 +69,11 @@
 
 {% block content%}
 {% endblock %}
+
+
+
+
+
 
     <!-- footer -->
     <section class="footer  flush--top">
@@ -75,10 +86,7 @@
           </ul>
           <ul class="list-unstyled  col-12  col-sm-2  col-lg-2">
             <li><a href="index.html">Home</a></li>
-            <li><a href="work.html">Work</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="shortcodes.html">Shortcodes</a></li>
-            <li><a href="archives.html">Archives</a></li>
+            <li><a href="#">Register</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
           <div class="col-12  col-sm-7  col-lg-5  col-lg-offset-3  text-right  hard--right">
@@ -90,6 +98,7 @@
         </div>
       </div>
     </section><!-- footer -->
+
 
     <!-- jQuery -->
     <script src="http://code.jquery.com/jquery.js"></script>
