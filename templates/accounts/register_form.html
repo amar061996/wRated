@@ -23,7 +23,13 @@
     <div class="form-group">
         <label for="{{ field.id }}" class="col-12  col-lg-4  control-label">{{ field.label }} :</label>
         <div class="col-12  col-lg-8">
-            {{ field|add_class:"form-control" }}
+            {% if field.label == 'Profile picture' %}
+                  {{ field }}
+             {% else %}
+                  
+              {{ field|add_class:"form-control" }}
+              
+             {% endif %} 
         </div>
     </div>                  
     {% endfor %}

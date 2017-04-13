@@ -27,7 +27,7 @@ def home(request):
 
 def register_employee(request):
 
-	form=EmployeeForm(request.POST or None)
+	form=EmployeeForm(request.POST or None,request.FILES or None)
 	if request.method=='POST':
 		if form.is_valid():
 			e_user=form.save(commit=False)
