@@ -1,30 +1,77 @@
-{% load staticfiles %}
+{% load add_class %}
+<!--Registration Form -->
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
+<div id="ratingModal" class="modal fade" role="dialog">
+<!-- Popup Div Starts Here -->
+ <div class="modal-dialog">
+<!-- Contact Us Form -->
 
-    
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
-    <link href="{% static 'css/star-rating.css' %}" media="all" rel="stylesheet" type="text/css" />
+<div class="modal-content" >
+<div class="tab-content">
+<div id="emp" class="tab-pane  active  nav-tabs-content">
+
+ <button type="button" class="close" data-dismiss="modal" >&times;</button>
+
+<h1>Rate your Workplace</h1>
+ <!-- comment form -->
+  <form method="post" action="{% url 'ratings:home' %}" id="ratingForm" class="form-horizontal" role="form">{% csrf_token %}
+
+            <table class="table  table-striped  table-bordered  table-responsive  text-left">
+                  <tr>
+                  
+                    <td>
+                    	<p>1) Rate the environment of your Workplace this week?</p>
+                     	<input id="input-id" type="text" class="rating" data-size="xs" name="environment" >
+                    </td>
+                    
+                  </tr>
+                  <tr>
+                    <td>
+                     	<p>2) Rate the sanitation of your Workplace this week?</p>
+                     	<input id="input-id" type="text" class="rating" data-size="xs" name="sanitation" >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                     	<p>3) Rate the workload of your Workplace this week?</p>
+                     	<input id="input-id" type="text" class="rating" data-size="xs" name="workload" >
+                    </td>
+                  </tr>
+                  <tr>
+                  	<td>
+                  		<p>4) Rate the cooperation of your Collegues in your Workplace this week?</p>
+                     	<input id="input-id" type="text" class="rating" data-size="xs" name="cooperation" >
+                  	</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      	<p>5) Rate the management of your Workplace this week?</p>
+                     	<input id="input-id" type="text" class="rating" data-size="xs" name="management" >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                     	<p>6) Rate the judicial of your Workplace this week?</p>
+                     	<input id="input-id" type="text" class="rating" data-size="xs" name="judicial" >
+                    </td>
+                  </tr>  
+                  <tr>
+                    <td>
+                      <input type="submit" class="btn btn--green" value="submit"> 
+                    </td>
+                  </tr>
+                </table>
+     	
  
-
- 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
-    <script src="{% static 'js/star-rating.js' %}" type="text/javascript"></script>
-</head>
-<body>
+     
 
 
-<form  method="post" action="{% url 'ratings:home' %}" name="rForm">{% csrf_token %}
-<p>Hii</p>
-   <input id="input-id" type="text" class="rating" data-size="xs" name="new" >
-     <input type="submit" class="btn btn-primary" value="submit">      
-</form>
+  </form> 
 
-</body>
-</html>
+</div>
+</div>
 
 
-
+</div>
+</div>
+</div>

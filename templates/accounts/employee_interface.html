@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block extra_css %}
+
+
+{% endblock %}
+{% block content %}
+
+
+{% include 'ratings/rform.html' %}
+ <!-- masthead -->
+    <div class="jumbotron">
+    <div class="row">
+    <div class="col-xs-12  col-sm-12  col-md-4  col-lg-4">
+            <table class="table  table-striped  table-bordered  table-responsive  text-left">
+                  <tr>
+                  
+                    <td>
+                      <img src="{% static 'img/portfolio-feature.jpg '%}" class="img-responsive" style="height: 350px;width: 500px">
+                    </td>
+                    
+                  </tr>
+                  <tr>
+                    <td>
+                     <i class="fa fa-user" aria-hidden="true"></i> : Amar Prakash
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                     <i class="fa fa-envelope-o" aria-hidden="true"></i> : amar.prakash196@gmail.com
+                    </td>
+                  </tr>
+                  <tr>
+                  	<td>
+                  		<i class="fa fa-venus-mars"></i> : <i class="fa fa-user	-mars"></i>
+                  	</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <i class="fa fa-building-o" aria-hidden="true"></i> : Intel
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <i class="fa fa-id-badge" aria-hidden="true"></i> : 22451
+                    </td>
+                  </tr>  
+                  <tr>
+                    <td>
+                      <a href="#" target="_blank" class="btn  btn--green">Edit Profile</a>
+                    </td>
+                  </tr>
+                </table>
+     		</div>
+    	<h2 class="jumbotron--title">Welcome Amar</h2>
+    </div>
+      
+      	
+    </div><!-- /masthead -->
+
+      <!-- intro -->
+      <section class="intro">
+        <div class="container">
+          <h1>
+            Start Rating Your Workplace
+          </h1>
+          <p class="portfolio--sub-title">Let others know about your workplace</p>
+      				<br/>
+            <a href="#" data-toggle="modal" data-target="#ratingModal" class="btn btn--dark">Click to rate</a>
+        </div>
+      </section><!-- /intro -->  
+
+      <!-- portfolio lr -->
+      <div class="portfolio--lr">
+        <div class="container">
+
+          <div class="row">
+            <!-- left -->
+            <div class="col-12  col-md-7  col-lg-6">
+              <img src="{% static 'img/portfolio.png' %}" class="img-responsive" alt="portfolio image" style="opacity: 0.5;" />
+            </div>
+              <!-- right -->
+              <div class="col-12  col-md-offset-1  col-md-4  col-lg-offset-1  col-lg-5">
+                <h4 class="portfolio--title">Intel</h4>
+                
+                <p class="portfolio--paragraph">
+                  Check your Workplace's Rating and Reviews.
+                </p>
+                <a href="project.html" class="btn  btn--green">Visit Workplace</a>
+              </div>
+          </div>
+
+        </div>
+      </div><!-- /portfolio lr -->
+      	<hr style="margin-left: 200px;margin-right: 200px;">
+   
+       <div class="container main-content">
+        <br>
+          <div class="row">
+
+          <h4 style="text-align: center;">Explore Other Workplaces</h4>
+            <ul class="list-unstyled  portfolio--list  cs-style-3">
+            
+              <!-- work item 1 -->
+				 <div class="w3-quarter">
+					<div class="w3-card-4 test" style="width:92%;max-width:300px;">
+						<img src="{% static 'img/img_avatar3.png' %}" alt="Avatar" style="width:100%;">
+						<div class="w3-container" style="background-color: rgba(100, 100, 100, 0.2);" >
+						<h4><b>John</b></h4>    
+						<p>Architect and engineer</p>    
+						</div>
+					</div>
+					<br>
+				</div>
+					 <div class="w3-quarter">
+					<div class="w3-card-4 test" style="width:92%;max-width:300px;">
+						<img src="{% static 'img/img_avatar3.png' %}" alt="Avatar" style="width:100%;">
+						<div class="w3-container" style="background-color: rgba(100, 100, 100, 0.2);" >
+						<h4><b>John</b></h4>    
+						<p>Architect and engineer</p>    
+						</div>
+					</div>
+					<br>
+				</div>
+					 <div class="w3-quarter">
+					<div class="w3-card-4 test" style="width:92%;max-width:300px;">
+						<img src="{% static 'img/img_avatar3.png' %}" alt="Avatar" style="width:100%;">
+						<div class="w3-container" style="background-color: rgba(100, 100, 100, 0.2);" >
+						<h4><b>John</b></h4>    
+						<p>Architect and engineer</p>    
+						</div>
+					</div>
+					<br>
+				</div>
+					 <div class="w3-quarter">
+					<div class="w3-card-4 test" style="width:92%;max-width:300px;">
+						<img src="{% static 'img/admin.png' %}" alt="Avatar" style="width:268px;height:268px;">
+						<div class="w3-container" style="background-color: rgba(100, 100, 100, 0.2);" >
+						<h4><b>John</b></h4>    
+						<p>Architect and engineer</p>    
+						</div>
+					</div>
+					<br>
+				</div>
+
+            </ul>
+
+          </div>
+          <a href="#" class="btn btn--green" style="margin-left: 40%">See more</a>
+
+        </div><!-- /portfolio list -->
+
+
+        <!-- portfolio list -->
+        
+        <!-- twitter -->
+        <section class="tweet">
+          <div class="container">
+            <span class="icon-twitter"></span>
+            <h3 class="tweet--tweet">Why not drop us a line on Twitter?</h3>
+            <p class="tweet--secondary">We'd love to hear from you!</p>
+            <a href="http://www.twitter.com/nerdswithhair" target="_blank" class="btn  btn--green">@nerdswithhair</a>
+          </div>
+        </section><!-- /twitter -->
+
+
+
+<!-- Popup Div Ends Here -->
+<!-- Registration Ends Here-->
+{% endblock %}

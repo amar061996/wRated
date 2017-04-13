@@ -20,6 +20,9 @@ def home(request):
 	"form":form,
 	"wform":wform,
 	}
+
+		
+	
 	return render(request,"index.html",context)
 
 def register_employee(request):
@@ -57,3 +60,15 @@ def register_workplace(request):
 		"form":form
 		}		
 		return render(request,"accounts/eform.html",context)
+
+
+# employee interface
+
+def employee_home(request):
+
+	return render(request,"accounts/employee_interface.html")
+
+
+def workplace_home(request):
+	
+	return render(request,"accounts/workplace_interface.html")	
