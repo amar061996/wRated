@@ -1,0 +1,50 @@
+{% load add_class %}
+<!--Registration Form -->
+
+<div id="loginModal" class="modal fade" role="dialog">
+<!-- Popup Div Starts Here -->
+ <div class="modal-dialog">
+<!-- Contact Us Form -->
+<div class="modal-content">
+
+<div class="tab-content">
+<div id="login" class="tab-pane  active  nav-tabs-content">
+             
+                 
+  <button type="button" class="close" data-dismiss="modal" style="margin-left: 18px;">&times;</button>
+          
+   <h1>Login</h1>          
+
+
+
+ <!-- login form -->
+  <form method="post" action="{% url 'accounts:login' %}" id="Registration-form" class="form-horizontal" role="form">{% csrf_token %}
+    {% for field in uform %}
+    <div class="form-group">
+        <label for="{{ field.id }}" class="col-12  col-lg-4  control-label">{{ field.label }} :</label>
+        <div class="col-12  col-lg-8">
+
+              {{ field|add_class:"form-control" }}
+
+        </div>
+    </div>                  
+    {% endfor %}
+
+    <br/>
+    <div class="form-group">
+
+      <div class="col-12 col-lg-offset-4 col-sm-8 ">
+       <button type="submit" class="btn btn--green">Login</button>
+      </div>
+    </div>
+
+
+
+
+  </form> 
+
+</div>
+</div>
+</div>
+</div>
+</div>

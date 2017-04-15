@@ -1,6 +1,6 @@
 from django import forms
 from .models import Category,Workplace,Employee
-
+from django.contrib.auth import authenticate
 
 class WorkplaceForm(forms.ModelForm):
 	first_name=forms.CharField(max_length=250,label='Company Name')
@@ -20,3 +20,24 @@ class EmployeeForm(forms.ModelForm):
 			super(EmployeeForm, self).__init__(*args, **kwargs)
 			for field in self.fields:
 				field.widget.attrs.update({'class' : 'form-control'})
+
+
+class UserLoginForm(forms.Form):
+	username=forms.CharField()
+	password=forms.CharField(widget=forms.PasswordInput)
+
+	def clean(self,*args,**kwargs):
+		username=self.cleaned_data.get("username")
+		password=self.cleaned_data.get("password")
+
+		
+		if username and password:
+			user=authenticate(username=username,password=password)
+			if not user:
+				raise forms.ValidationError("User does not exist")
+			if not user.check_password(password):
+				raise forms.ValidationError("Incorrect Password")
+			if not user.is_active:
+				raise forms.ValidationError("User not Active")
+
+		return super(UserLoginForm,self).clean(*args,**kwargs)					

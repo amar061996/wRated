@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 
 #authentication
@@ -11,14 +11,17 @@ from django.contrib.auth import (
 
 	)
 # Create your views here.
-from .forms import WorkplaceForm,EmployeeForm
+from .forms import WorkplaceForm,EmployeeForm,UserLoginForm
 
 def home(request):
 	form=EmployeeForm()
 	wform=WorkplaceForm()
+	uform=UserLoginForm()
 	context={
 	"form":form,
 	"wform":wform,
+	'uform':uform,
+
 	}
 
 		
@@ -72,3 +75,20 @@ def employee_home(request):
 def workplace_home(request):
 	
 	return render(request,"accounts/workplace_interface.html")	
+
+def login_view(request):
+	
+	form=UserLoginForm(request.POST or None)
+	if form.is_valid():
+		username=form.cleaned_data.get("username")
+		password=form.cleaned_data.get("password")
+		user=authenticate(username=username,password=password)
+		login(request,user)
+		if hasattr(user,'employee'):
+			return redirect("accounts:empHome")
+		elif hasattr(user,'workplace'):
+			return redirect("accounts:wrkHome")
+
+		else:
+			return HttpResponse("Hiii")	
+		
