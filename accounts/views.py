@@ -68,9 +68,17 @@ def register_workplace(request):
 # employee interface
 
 def employee_home(request):
-
-	return render(request,"accounts/employee_interface.html")
-
+	if request.user.is_authenticated:
+		if hasattr(request.user,'employee'):
+		
+			context={
+			'emp':request.user.employee
+			}
+			return render(request,"accounts/employee_interface.html",context)
+		else:
+			return HttpResponse("Sign in As Employee")
+	else:
+		return HttpResponse("Sign in")		
 
 def workplace_home(request):
 	
@@ -92,3 +100,8 @@ def login_view(request):
 		else:
 			return HttpResponse("Hiii")	
 		
+
+def logout_view(request):
+
+	logout(request)
+	return redirect("home")

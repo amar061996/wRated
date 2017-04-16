@@ -20,3 +20,7 @@ class Rating(models.Model):
 	employee=models.ForeignKey(Employee,on_delete=models.CASCADE)
 	workplace=models.ForeignKey(Workplace,on_delete=models.CASCADE)
 	created=models.DateTimeField(auto_now=False,auto_now_add=True)
+
+
+	def __str__(self):
+		return self.employee.get_full_name()+" : "+self.workplace.first_name

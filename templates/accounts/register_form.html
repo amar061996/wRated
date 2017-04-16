@@ -18,7 +18,7 @@
 <div id="emp" class="tab-pane  active  nav-tabs-content">
 
  <!-- comment form -->
-  <form method="post" action="{% url 'accounts:employee' %}" id="Registration-form" class="form-horizontal" role="form">{% csrf_token %}
+  <form method="post" action="{% url 'accounts:employee' %}" id="Registration-form" class="form-horizontal" role="form" enctype="multipart/form-data">{% csrf_token %}
     {% for field in form %}
     <div class="form-group">
         <label for="{{ field.id }}" class="col-12  col-lg-4  control-label">{{ field.label }} :</label>
