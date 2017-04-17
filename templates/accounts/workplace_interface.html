@@ -1,1 +1,157 @@
-<h1>Hii</h1>
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+
+
+{% block extra_css %}
+
+
+{% endblock %}
+
+{% block nav_links %}
+
+<!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse  navbar-collapse  navbar-ex1-collapse">
+        <ul class="nav  navbar-nav">
+            <li class="active">Home</li>
+            <li><a href="#">My Ratings</a></li>
+            <li><a href="#">Employees</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
+        </ul>
+      </div><!-- /navbar-collapse -->
+
+{% endblock %}
+
+
+{% block content %}
+
+
+{% include 'ratings/rform.html' %}
+ <!-- masthead -->
+    <div class="jumbotron">
+    <div class="row">
+  
+    	<h2 class="jumbotron--title">Welcome Amazon</h2><br/><br/>
+    	<a href="#" class="btn btn--green">Visit Amazon</a>
+    </div>
+
+
+      
+      	
+    </div><!-- /masthead -->
+
+      <!-- intro -->
+      <section class="intro">
+        <div class="container">
+        <h1 style="font-size: 2em">Registered Employees</h1>
+         <div class="incremental-counter" data-value="20"></div>
+          
+      				<br/>
+            <a href="#" data-toggle="modal" data-target="#ratingModal" class="btn btn--dark">View Employees</a>
+        </div>
+      </section><!-- /intro -->  
+
+      <!-- portfolio lr -->
+      <div class="portfolio--feature">
+      		{% include 'ratings/rating_card.html' %}
+      </div><!-- /portfolio lr -->
+      
+<div class="container main-content">
+        <br>
+          <div class="row">
+
+          <h4 style="text-align: center;">Explore Other Workplaces</h4>
+            <ul class="list-unstyled  portfolio--list  cs-style-3">
+            
+              <!-- work item 1 -->
+				 <div class="w3-quarter">
+					<div class="w3-card-4 test" style="width:92%;max-width:300px;">
+						<img src="{% static 'img/img_avatar3.png' %}" alt="Avatar" style="width:100%;">
+						<div class="w3-container" style="background-color: rgba(100, 100, 100, 0.2);" >
+						<h4><b>John</b></h4>    
+						<p>Architect and engineer</p>    
+						</div>
+					</div>
+					<br>
+				</div>
+					 <div class="w3-quarter">
+					<div class="w3-card-4 test" style="width:92%;max-width:300px;">
+						<img src="{% static 'img/img_avatar3.png' %}" alt="Avatar" style="width:100%;">
+						<div class="w3-container" style="background-color: rgba(100, 100, 100, 0.2);" >
+						<h4><b>John</b></h4>    
+						<p>Architect and engineer</p>    
+						</div>
+					</div>
+					<br>
+				</div>
+					 <div class="w3-quarter">
+					<div class="w3-card-4 test" style="width:92%;max-width:300px;">
+						<img src="{% static 'img/img_avatar3.png' %}" alt="Avatar" style="width:100%;">
+						<div class="w3-container" style="background-color: rgba(100, 100, 100, 0.2);" >
+						<h4><b>John</b></h4>    
+						<p>Architect and engineer</p>    
+						</div>
+					</div>
+					<br>
+				</div>
+					 <div class="w3-quarter">
+					<div class="w3-card-4 test" style="width:92%;max-width:300px;">
+						<img src="{% static 'img/admin.png' %}" alt="Avatar" style="width:268px;height:268px;">
+						<div class="w3-container" style="background-color: rgba(100, 100, 100, 0.2);" >
+						<h4><b>John</b></h4>    
+						<p>Architect and engineer</p>    
+						</div>
+					</div>
+					<br>
+				</div>
+
+            </ul>
+
+          </div>
+          <a href="#" class="btn btn--green" style="margin-left: 40%">See more</a>
+
+        </div><!-- /portfolio list -->
+
+        <div class="portfolio--feature">
+        	<div class="container">
+
+          <div class="row">
+            <!-- left -->
+            <div class="col-12 col-md-offset-2 col-md-4  col-lg-4">
+              <img src="{% static 'img/comment.png' %}" class="img-responsive" alt="portfolio image" style="height: 300px;width: 300px" />
+            </div>
+              <!-- right -->
+              <div class="col-12    col-md-offset-1 col-md-5    col-lg-5" style="margin-top: 50px;">
+                <h4 class="portfolio--title">Recent Reviews</h4>
+               
+                <p class="portfolio--paragraph">
+                 Check most recent reviews made by your employees.
+                </p>
+                <a href="project.html" class="btn  btn--green">take a look</a>
+              </div>
+          </div>
+
+        </div>
+        </div>
+ 
+
+
+        <!-- portfolio list -->
+        
+        <!-- twitter -->
+        <section class="tweet" style="margin-top: 0">
+          <div class="container">
+            <span class="icon-twitter"></span>
+            <h3 class="tweet--tweet">Why not drop us a line on Twitter?</h3>
+            <p class="tweet--secondary">We'd love to hear from you!</p>
+            <a href="http://www.twitter.com/nerdswithhair" target="_blank" class="btn  btn--green">@nerdswithhair</a>
+          </div>
+        </section><!-- /twitter -->
+
+
+
+<!-- Popup Div Ends Here -->
+<!-- Registration Ends Here-->
+{% endblock %}

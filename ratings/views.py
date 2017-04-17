@@ -33,7 +33,7 @@ def rating_home(request):
 					employee=employee,
 					workplace=workplace
 					)
-
+				
 				return HttpResponse("ok")
 		else:
 			return HttpResponse("Login")

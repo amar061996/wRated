@@ -43,3 +43,12 @@ background-color: #243546;
 .table{
 	background-color: #34495e;
 }
+
+.progress{
+	background-color: #ddd;	
+}
+
+.rating-num{
+
+	font-size: 4em;
+}
