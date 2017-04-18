@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+
+
+{% block extra_css %}
+
+
+{% endblock %}
+
+{% block nav_links %}
+
+<!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse  navbar-collapse  navbar-ex1-collapse">
+        <ul class="nav  navbar-nav">
+            <li class="active">Home</li>
+            <li><a href="#">My Ratings</a></li>
+            <li><a href="#">Employees</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
+        </ul>
+      </div><!-- /navbar-collapse -->
+
+{% endblock %}
+
+
+{% block content %}
+	{% if request.user.is_authenticated %}
+
+	<br/>
+	<div class="container" style="min-height: 700px">
+ 		<h1>Registered Employees</h1><hr/><br/>
+        <div class="row">
+        	{% for emp in employee_list %}
+        <div class="col-md-6">
+            <div class="well well-sm" style="background-color:#ccc">
+                <div class="row" style="color: black;">
+                    <div class="col-xs-12 col-md-5">
+                	{% if emp.profile_picture %}
+                		<img src="{{ emp.profile_picture.url }}" class="img-responsive" style="height: 210px;width: 195px;">
+                	{% else %}
+                		<img src="{% static 'img/img_avatar3.png' %}" class="img-responsive" style="height: 210px">
+                	{% endif %}	
+                        <!-- end row -->
+                    </div>
+                    <div class="col-xs-12 col-md-7" style="font-size: 0.8em">
+                        <div>
+                            <span class="fa fa-user"></span> : {{ emp.get_full_name }}
+                            <a href="{% url 'accounts:deleteEmp' emp.id %}" id="deleteEmp"  ><span class="fa fa-times pull-right" style="color: black;"></span></a>
+                        </div><br/>
+                        <div>
+                            <span class="fa fa-envelope"></span> : {{ emp.email }}
+                        </div><br/>
+                        <div>
+                            <span class="fa fa-id-badge"></span> : {{ emp.employee_id }}
+                        </div><br/>
+                        <div>
+                            <span class="fa fa-address-card"></span> : Software Developer
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+ 		{% endfor %}
+  </div>
+</div>
+	{% endif %}
+{% endblock %}
+
+{% block extra_js %}
+	  <script src="{% static 'js/confirm_delete.js' %}" type="text/javascript"></script>
+{% endblock %}

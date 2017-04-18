@@ -33,8 +33,8 @@
     <div class="jumbotron">
     <div class="row">
   
-    	<h2 class="jumbotron--title">Welcome Amazon</h2><br/><br/>
-    	<a href="#" class="btn btn--green">Visit Amazon</a>
+    	<h2 class="jumbotron--title">Welcome {{ workp.first_name }}</h2><br/><br/>
+    	<a href="#" class="btn btn--green">Visit {{ workp.first_name }}</a>
     </div>
 
 
@@ -49,7 +49,7 @@
          <div class="incremental-counter" data-value="20"></div>
           
       				<br/>
-            <a href="#" data-toggle="modal" data-target="#ratingModal" class="btn btn--dark">View Employees</a>
+            <a href="{% url 'accounts:workEmp' workp.id %}"  class="btn btn--dark">View Employees</a>
         </div>
       </section><!-- /intro -->  
 
@@ -110,7 +110,7 @@
             </ul>
 
           </div>
-          <a href="#" class="btn btn--green" style="margin-left: 40%">See more</a>
+          <a href="#" class="btn btn--green" style="margin-left: 40%">See more</a><br/><br/>
 
         </div><!-- /portfolio list -->
 
@@ -129,7 +129,7 @@
                 <p class="portfolio--paragraph">
                  Check most recent reviews made by your employees.
                 </p>
-                <a href="project.html" class="btn  btn--green">take a look</a>
+                <a href="{% url 'accounts:workReview' workp.id %}" class="btn  btn--green">take a look</a>
               </div>
           </div>
 

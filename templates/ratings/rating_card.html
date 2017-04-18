@@ -82,9 +82,9 @@
             </div>
         </div>
         <div class="col-md-5 col-md-offset-1">
-        		<h1 style="margin-top: 40px;font-size: 2em">Amazon's Rating</h1>
+        		<h1 style="margin-top: 40px;font-size: 2em">{{ workp.first_name }}'s Rating</h1>
         		<p>For more details click on the link below.</p>
-        		<a href="#" class="btn btn--green">My Ratings</a>
+        		<a href="{% url 'accounts:workRating' workp.id %}" class="btn btn--green">My Ratings</a>
         </div>
        
   </div>
