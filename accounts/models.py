@@ -30,11 +30,12 @@ class Workplace(User):
 	logo=models.ImageField(upload_to=upload_location,null=True,blank=True)
 	wcategory=models.ForeignKey(Category,on_delete=models.CASCADE,verbose_name='Category')
 	description=models.TextField(null=True,blank=False)
-
+	website=models.URLField(null=True,blank=False)
 
 
 class Employee(User):
 	profile_picture=models.ImageField(upload_to=upload_location,null=True,blank=True)
 	gender=models.CharField(max_length=250,choices=GENDER_CHOICES,blank=False,default='Male')
 	employee_id=models.CharField(max_length=250)
+	designation=models.CharField(max_length=250,null=True,blank=False)
 	eworkplace=models.ForeignKey(Workplace,on_delete=models.CASCADE,verbose_name='Workplace',blank=False)

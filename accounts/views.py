@@ -1,6 +1,5 @@
 from django.shortcuts import render,redirect,get_object_or_404
-from django.http import HttpResponse
-
+from django.http import HttpResponse,JsonResponse
 #authentication
 from django.contrib.auth import (
 	authenticate,
@@ -14,6 +13,7 @@ from django.contrib.auth import (
 from .forms import WorkplaceForm,EmployeeForm,UserLoginForm
 #models
 from .models import Employee,Workplace
+from ratings.models import Rating
 def home(request):
 	form=EmployeeForm()
 	wform=WorkplaceForm()
@@ -115,8 +115,38 @@ def workplace_employees(request,id):
 
 def workplace_rating(request,id):
 	workplace=get_object_or_404(Workplace,id=id)
-	print workplace
-	return HttpResponse("This is workplace rating")
+	context={
+			'workp':workplace
+			}
+	return render(request,"accounts/workplace_rating.html",context)
+
+
+def get_data(request):
+	if request.user.is_authenticated:
+		if hasattr(request.user,'workplace'):
+			workplace=request.user.workplace
+			ratings=Rating.objects.filter(workplace=workplace)
+			env=san=workload=coop=manag=jud=0
+			for rating in ratings:
+				env+=rating.environment
+				san+=rating.sanitation
+				workload+=rating.workload
+				coop+=rating.cooperation
+				manag+=rating.management
+				jud+=rating.judicial
+
+			env=env/(ratings.count())
+			san=san/(ratings.count())
+			workload=workload/(ratings.count())
+			coop=coop/(ratings.count())
+			manag=manag/(ratings.count())
+			jud=jud/(ratings.count())	
+				
+			data={
+			"labels":["Environment","Sanitation","Workload","Cooperation","Management","Judicial"],
+			"values":[env,san,workload,coop,manag,jud]
+			}	
+			return JsonResponse(data)
 
 #workplace-review
 def workplace_review(request,id):

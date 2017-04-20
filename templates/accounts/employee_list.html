@@ -14,9 +14,9 @@
 <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse  navbar-collapse  navbar-ex1-collapse">
         <ul class="nav  navbar-nav">
-            <li class="active">Home</li>
+            <li><a href="{% url 'accounts:wrkHome' %}">Home</a></li>
             <li><a href="#">My Ratings</a></li>
-            <li><a href="#">Employees</a></li>
+            <li class="active">Employees</li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
         </ul>
@@ -47,7 +47,7 @@
                     <div class="col-xs-12 col-md-7" style="font-size: 0.8em">
                         <div>
                             <span class="fa fa-user"></span> : {{ emp.get_full_name }}
-                            <a href="{% url 'accounts:deleteEmp' emp.id %}" id="deleteEmp"  ><span class="fa fa-times pull-right" style="color: black;"></span></a>
+                            <a href="{% url 'accounts:deleteEmp' emp.id %}" id="deleteEmp" data-toggle="tooltip" title="Delete Employee"  ><span class="fa fa-times pull-right" style="color: black;"></span></a>
                         </div><br/>
                         <div>
                             <span class="fa fa-envelope"></span> : {{ emp.email }}
@@ -56,7 +56,7 @@
                             <span class="fa fa-id-badge"></span> : {{ emp.employee_id }}
                         </div><br/>
                         <div>
-                            <span class="fa fa-address-card"></span> : Software Developer
+                            <span class="fa fa-address-card"></span> : {{ emp.designation }}
                         </div>
                         
                         

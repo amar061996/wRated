@@ -16,7 +16,7 @@
         <ul class="nav  navbar-nav">
             <li class="active">Home</li>
             <li><a href="#">My Ratings</a></li>
-            <li><a href="#">Employees</a></li>
+            <li><a href="{% url 'accounts:workEmp' workp.id %}">Employees</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
         </ul>
@@ -34,7 +34,7 @@
     <div class="row">
   
     	<h2 class="jumbotron--title">Welcome {{ workp.first_name }}</h2><br/><br/>
-    	<a href="#" class="btn btn--green">Visit {{ workp.first_name }}</a>
+    	<a href="{{ workp.website }}" class="btn btn--green">Visit {{ workp.first_name }}</a>
     </div>
 
 
@@ -155,3 +155,13 @@
 <!-- Popup Div Ends Here -->
 <!-- Registration Ends Here-->
 {% endblock %}
+<script type="text/javascript">
+{% block jquery %}
+
+  $(".incremental-counter").incrementalCounter({
+  "digits": 4
+});
+
+{% endblock %}
+
+</script>

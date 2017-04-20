@@ -14,6 +14,8 @@ url(r'^workplace/home$',account_views.workplace_home,name="wrkHome"),
 url(r'workplace/(?P<id>\d+)/employees/$',account_views.workplace_employees,name="workEmp"),
 url(r'workplace/(?P<id>\d+)/rating/$',account_views.workplace_rating,name="workRating"),
 url(r'workplace/(?P<id>\d+)/review/$',account_views.workplace_employees,name="workReview"),
+#workplace_data
+url(r'workplace/data',account_views.get_data,name='workplace-data'),
 
 #delete_employee
 url(r'employee/(?P<id>\d+)/delete/$',account_views.delete_employee,name="deleteEmp"),
